@@ -1,4 +1,5 @@
 import torch
+from torchinfo import summary
 from alexnet import AlexNet
 
 # init random shape
@@ -8,4 +9,4 @@ x = torch.randn(1, 3, 224, 224)
 model = AlexNet()
 y = model.forward(x)
 
-print(f"AlexNet Output Shape: {y.size()}")
+summary(model, input_size = x.size()) # cor rect
